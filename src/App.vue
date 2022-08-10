@@ -1,26 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="main">
+    <b-container class="d-flex flex-column justify-center items-center">
+      <PackageCards class="mt-4" />
+    </b-container>
+    <VFooter />
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import { defineComponent } from 'vue';
 
-export default {
-  name: 'App',
+import PackageCards from './components/blocks/package/PackageCards.vue';
+import VFooter from './components/blocks/footer/VFooter.vue';
+
+export default defineComponent({
+  name: 'IndexPage',
   components: {
-    HelloWorld
-  }
-}
+    PackageCards,
+    VFooter,
+  },
+});
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 </style>
